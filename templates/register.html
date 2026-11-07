@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Personal Vault</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="auth-container">
+    <div class="auth-card">
+
+        <h1>🔐 Personal Vault</h1>
+        <h2>Create Account</h2>
+        <p>Register to access your personal storage.</p>
+
+        {% for message in get_flashed_messages() %}
+            <div class="message">{{ message }}</div>
+        {% endfor %}
+
+        <form method="POST">
+
+            <label>Username</label>
+            <input type="text" name="username"
+                   placeholder="Enter username" required>
+
+            <label>Password</label>
+            <input type="password" name="password"
+                   placeholder="Minimum 8 characters"
+                   minlength="8" required>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <p>Already have an account?
+            <a href="{{ url_for('login') }}">Login here</a>
+        </p>
+
+    </div>
+</div>
+
+</body>
+</html>
