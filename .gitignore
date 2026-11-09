@@ -7,3 +7,4 @@ secret.key
 vault.key
 uploads/
 .env
+.venv/
